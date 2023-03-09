@@ -2,6 +2,7 @@
 #include "function.h"
 #include <QDebug>
 #include <QCoreApplication>
+using namespace std;
 
 MyTcpServer::~MyTcpServer()
 {
@@ -32,25 +33,34 @@ void MyTcpServer::slotNewConnection(){
         connect(cur_mTcpSocket,&QTcpSocket::disconnected,
                 this,&MyTcpServer::slotClientDisconnected);
         mTcpSocket.insert(cur_mTcpSocket->socketDescriptor(),cur_mTcpSocket);
+        //cur_mTcpSocket->flush();
     }
 }
 
 void MyTcpServer::slotServerRead(){
     QTcpSocket *cur_mTcpSocket = (QTcpSocket*)sender();
-    QByteArray array;
+    QString array;
     QString res;
 
    while(cur_mTcpSocket->bytesAvailable()>0)
    {
-        array = cur_mTcpSocket->readAll();
+        //array = cur_mTcpSocket->readAll();
         //res.append(array);
-        res += array;
+        res += cur_mTcpSocket->readAll();
 
     }
 
-    array = "";
-    array = QByteArray::fromStdString(res.toStdString());
-    cur_mTcpSocket->write(Parsing(array));
+    //array = "";
+    //array = QByteArray::fromStdString(res);
+   if (res.trimmed().isEmpty()){
+       return;
+   }
+   if (res.trimmed()[0] > 'z'){
+       return;
+   }
+
+    cur_mTcpSocket->write(Parsing(res.toUtf8()));
+    qDebug() << res.size() << "\n";
 
 }
 
