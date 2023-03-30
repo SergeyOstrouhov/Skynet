@@ -1,5 +1,5 @@
 QT -= gui
-
+QT += sql #Для работы с бд
 QT += network #Для работы с сетью
 
 
@@ -27,5 +27,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Db_sing.h \
     function.h \
     mytcpserver.h
