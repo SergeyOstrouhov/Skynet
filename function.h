@@ -2,16 +2,27 @@
 #define FUNCTION_H
 #include <QByteArray>
 #include <QObject>
+#include "Db_sing.h"
 #endif // FUNCTION_H
 #include <QCoreApplication>
 #define print(a) qDebug() << a
 QByteArray auth(QString login, QString password){
     QByteArray res = "1 auth";
-    print("a");
+    if (MyDataBase::getInstance()->query("SELECT * FROM User").contains(QString(login+'|'+password)))
+    {
+        res = "auth OK";
+    }
+       else
+    {
+        res = "auth FAIL";
+    }
     return res;
 }
 QByteArray reg(QString login, QString password, QString mail){
     QByteArray res = "1 reg";
+//    QSqlQuery q(MyDataBase::getInstance());
+//    q.prepare("INSERT INTO User VALUES(:login, :password, :mail)");
+//    MyDataBase::getInstance()->query(q);
     return res;
 }
 QByteArray check_stat(){

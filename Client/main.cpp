@@ -5,6 +5,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
       SingletonClient::getInstance();
-  SingletonClient::getInstance()->send_to_server("auth sdfsdg sddg");
+  SingletonClient::getInstance()->send_to_server("auth admin qwer");
     return a.exec();
 }

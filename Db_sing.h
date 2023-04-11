@@ -30,9 +30,9 @@ class MyDataBase
     protected:
         MyDataBase(){
             db = QSqlDatabase::addDatabase("QSQLITE");
-            db.setDatabaseName("Test");
+            db.setDatabaseName("C:\\Qt\\Server_221_331\\Users.db");
             db.open();
-            if(!db.open())
+            if(!db.isOpen())
                 qDebug()<<db.lastError().text();
         }
         MyDataBase(const MyDataBase& )=delete;
@@ -52,6 +52,7 @@ class MyDataBase
             QSqlQuery query_obj(db);
             query_obj.exec(q);
             QString res="";
+            if (db.isOpen()) qDebug() << "111";
             while (query_obj.next()){
                 vector<QString> qwert;
                 QString login = query_obj.value("login").toString();
