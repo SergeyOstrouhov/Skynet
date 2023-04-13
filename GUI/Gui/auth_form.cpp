@@ -1,5 +1,6 @@
 #include "auth_form.h"
 #include "ui_auth_form.h"
+#include "client_sing.h"
 
 Auth_form::Auth_form(QWidget *parent) :
     QWidget(parent),
@@ -60,8 +61,10 @@ void Auth_form::on_pushButton_log_clicked()
     qDebug()<<"log "+ui->lineEdit_login->text()+
               ui->lineEdit_pass->text();
 
-
-    emit auth_ok(ui->lineEdit_login->text());
-    this->close();
+    SingletonClient::getInstance()->send_to_server("auth "+ui->lineEdit_login->text()+ " " + ui->lineEdit_pass->text());
+    if (SingletonClient::getInstance()->auth_status){
+        emit auth_ok(ui->lineEdit_login->text());
+        this->close();
+    }
 }
 

@@ -1,4 +1,5 @@
 QT       += core gui
+QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,11 +12,13 @@ CONFIG += c++17
 SOURCES += \
     auth_form.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    client_sing.cpp
 
 HEADERS += \
     auth_form.h \
-    mainwindow.h
+    mainwindow.h \
+    client_sing.h
 
 FORMS += \
     auth_form.ui \

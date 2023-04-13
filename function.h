@@ -6,23 +6,24 @@
 #endif // FUNCTION_H
 #include <QCoreApplication>
 #define print(a) qDebug() << a
-QByteArray auth(QString login, QString password){
+QByteArray auth(QString login, QString password, QString socket){
     QByteArray res = "1 auth";
+    qDebug() << MyDataBase::getInstance()->query("SELECT * FROM User") << " <#\n";
     if (MyDataBase::getInstance()->query("SELECT * FROM User").contains(QString(login+'|'+password)))
     {
+        MyDataBase::getInstance()->login(login, socket);
         res = "auth OK";
     }
        else
     {
         res = "auth FAIL";
     }
+    qDebug() << res << " <$\n";
     return res;
 }
-QByteArray reg(QString login, QString password, QString mail){
+QByteArray reg(QString login, QString password, QString email){
     QByteArray res = "1 reg";
-//    QSqlQuery q(MyDataBase::getInstance());
-//    q.prepare("INSERT INTO User VALUES(:login, :password, :mail)");
-//    MyDataBase::getInstance()->query(q);
+    MyDataBase::getInstance()->add(login, password, email);
     return res;
 }
 QByteArray check_stat(){
@@ -33,8 +34,9 @@ QByteArray check_stat_all(){
     QByteArray res = "1 check";
     return res;
 }
-QByteArray out(){
+QByteArray out(QString login){
     QByteArray res = "1 log out";
+    MyDataBase::getInstance()->logout(login);
     return res;
 }
 QByteArray send_answ(QString task, QString var, QString answer){
@@ -42,7 +44,7 @@ QByteArray send_answ(QString task, QString var, QString answer){
     return res;
 }
 
-QByteArray Parsing(QString a){
+QByteArray Parsing(QString a, QString socket){
     /*if (a.startsWith("Hello")){
         return "Hi, Sergey!";
     }
@@ -54,7 +56,7 @@ QByteArray Parsing(QString a){
     data_from_client_list.pop_front();
     if (nameOfFunc=="auth")
         {
-        if (data_from_client_list.length() == 2) return auth(data_from_client_list.at(0), data_from_client_list.at(1));
+        if (data_from_client_list.length() == 2) return auth(data_from_client_list.at(0), data_from_client_list.at(1), socket);
         else return "Wrong input data - Need 2 parametrs for auth.\n";
         }
     if (nameOfFunc=="reg")
@@ -69,7 +71,7 @@ QByteArray Parsing(QString a){
     }
     if (nameOfFunc=="out")
     {
-        if (data_from_client_list.length() == 0) return out();
+        if (data_from_client_list.length() == 0) return out(data_from_client_list.at(0));
         else return "Wrong input data - Dont't need parametrs for log out.\n";
     }
     if (nameOfFunc=="send_answ")

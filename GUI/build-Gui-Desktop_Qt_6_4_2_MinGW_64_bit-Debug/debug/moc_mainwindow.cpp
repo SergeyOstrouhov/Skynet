@@ -165,7 +165,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
 
         case 1: _t->on_exit_clicked(); break;
-
+//        case 2: _t->on_pushButton_clicked(); break;
         case 3: _t->on_Task1_clicked(); break;
         case 4: _t->on_actionTask_1_triggered(); break;
         case 5: _t->on_actionTask_2_triggered(); break;

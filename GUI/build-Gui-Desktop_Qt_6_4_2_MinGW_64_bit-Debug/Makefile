@@ -343,6 +343,7 @@ Makefile: ../Gui/Gui.pro ../../../6.4.2/mingw_64/mkspecs/win32-g++/qmake.conf ..
 		../Gui/Gui.pro \
 		../../../6.4.2/mingw_64/lib/Qt6Widgets.prl \
 		../../../6.4.2/mingw_64/lib/Qt6Gui.prl \
+		../../../6.4.2/mingw_64/lib/Qt6Network.prl \
 		../../../6.4.2/mingw_64/lib/Qt6Core.prl \
 		../../../6.4.2/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../6.4.2/mingw_64/mkspecs/features/build_pass.prf
@@ -620,6 +621,7 @@ Makefile: ../Gui/Gui.pro ../../../6.4.2/mingw_64/mkspecs/win32-g++/qmake.conf ..
 ../Gui/Gui.pro:
 ../../../6.4.2/mingw_64/lib/Qt6Widgets.prl:
 ../../../6.4.2/mingw_64/lib/Qt6Gui.prl:
+../../../6.4.2/mingw_64/lib/Qt6Network.prl:
 ../../../6.4.2/mingw_64/lib/Qt6Core.prl:
 ../../../6.4.2/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../6.4.2/mingw_64/mkspecs/features/build_pass.prf:

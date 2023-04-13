@@ -52,14 +52,18 @@ void MyTcpServer::slotServerRead(){
 
     //array = "";
     //array = QByteArray::fromStdString(res);
-   if (res.trimmed().isEmpty()){
-       return;
-   }
-   if (res.trimmed()[0] > 'z'){
-       return;
-   }
-
-    cur_mTcpSocket->write(Parsing(res.toUtf8()));
+    if (res.trimmed().isEmpty()){
+        return;
+    }
+    if (res.trimmed()[0] > 'z'){
+        return;
+    }
+    std::stringstream flow;
+    std::string address = "";
+    flow << cur_mTcpSocket;
+    flow >> address;
+    qDebug() << cur_mTcpSocket << "\n";
+    cur_mTcpSocket->write(Parsing(res.toUtf8(), QString::fromStdString(address)));
     qDebug() << (res.toUtf8()) << "\n";
 
 }

@@ -52,23 +52,43 @@ class MyDataBase
             QSqlQuery query_obj(db);
             query_obj.exec(q);
             QString res="";
-            if (db.isOpen()) qDebug() << "111";
+//            if (db.isOpen()) qDebug() << "111";
             while (query_obj.next()){
                 vector<QString> qwert;
                 QString login = query_obj.value("login").toString();
                 QString password = query_obj.value("password").toString();
                 qwert.push_back(login);
                 qwert.push_back(password);
-                qDebug()<<login <<" " << password<<"\n";
+                //qDebug()<<login <<" " << password<<"\n";
                 res.append(login).append('|').append(password).append("||");
             }
             return res;
         }
-        void add (std::string q){
-            QSqlQuery query_obj(db);
-            query_obj.exec(QString::fromStdString(q));
+        void add (QString login, QString password, QString email){
+            QSqlQuery query(db);
+            query.prepare("INSERT INTO User (login,password,email) VALUES(:login, :password, :email)");
+            query.bindValue(":login", login);
+            query.bindValue(":password", password);
+            query.bindValue(":email", email);
+            query.exec();
         }
 
+        void login(QString login, QString socket)
+        {
+            QSqlQuery query(db);
+            query.prepare("UPDATE User SET socket=:socket WHERE login=:login");
+            query.bindValue(":socket", socket);
+            query.bindValue(":login", login);
+            query.exec();
+        }
+
+        void logout(QString login)
+        {
+            QSqlQuery query(db);
+            query.prepare("UPDATE User SET socket=NULL WHERE login=:login");
+            query.bindValue(":login", login);
+            query.exec();
+        }
 
 };
 
