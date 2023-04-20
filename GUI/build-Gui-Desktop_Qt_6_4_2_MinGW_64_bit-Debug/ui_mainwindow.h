@@ -31,11 +31,12 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QPushButton *exit;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *Task1;
     QPushButton *Tak2;
     QPushButton *push_Task3;
+    QPushButton *Check_s_button;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuAbout;
@@ -58,28 +59,31 @@ public:
         centralwidget->setObjectName("centralwidget");
         exit = new QPushButton(centralwidget);
         exit->setObjectName("exit");
-        exit->setGeometry(QRect(430, 420, 93, 29));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(240, 230, 295, 31));
-        horizontalLayout = new QHBoxLayout(widget);
+        exit->setGeometry(QRect(620, 470, 93, 29));
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(210, 200, 406, 61));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        Task1 = new QPushButton(widget);
+        Task1 = new QPushButton(layoutWidget);
         Task1->setObjectName("Task1");
 
         horizontalLayout->addWidget(Task1);
 
-        Tak2 = new QPushButton(widget);
+        Tak2 = new QPushButton(layoutWidget);
         Tak2->setObjectName("Tak2");
 
         horizontalLayout->addWidget(Tak2);
 
-        push_Task3 = new QPushButton(widget);
+        push_Task3 = new QPushButton(layoutWidget);
         push_Task3->setObjectName("push_Task3");
 
         horizontalLayout->addWidget(push_Task3);
 
+        Check_s_button = new QPushButton(centralwidget);
+        Check_s_button->setObjectName("Check_s_button");
+        Check_s_button->setGeometry(QRect(350, 290, 131, 29));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -117,6 +121,7 @@ public:
         Task1->setText(QCoreApplication::translate("MainWindow", "Task 1", nullptr));
         Tak2->setText(QCoreApplication::translate("MainWindow", "Task 2", nullptr));
         push_Task3->setText(QCoreApplication::translate("MainWindow", "Task 3", nullptr));
+        Check_s_button->setText(QCoreApplication::translate("MainWindow", "Check statistic", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi

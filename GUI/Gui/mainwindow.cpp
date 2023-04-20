@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "client_sing.h"
+#include "stat.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -8,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui_auth = new Auth_form;
-    connect(ui_auth, &Auth_form::auth_ok,
-            this, &MainWindow::slot_on_auth_ok);
+    //connect(ui_auth, &Auth_form::auth_ok,this, &MainWindow::slot_on_auth_ok);
+    connect(SingletonClient::getInstance(), &SingletonClient::auth_ok,this, &MainWindow::slot_on_auth_ok);
     ui_auth->show();
 }
 
@@ -68,5 +70,16 @@ void MainWindow::on_Tak2_clicked()
 void MainWindow::on_push_Task3_clicked()
 {
     qDebug()<<"task 3";
+}
+
+
+void MainWindow::on_Check_s_button_clicked()
+{
+    this->close();
+    stat = new Stat;
+    stat->show();
+    SingletonClient::getInstance()->send_to_server("check");
+    connect(stat, &Stat::on_closed,
+            this, &MainWindow::show);
 }
 

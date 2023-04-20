@@ -9,8 +9,14 @@ Auth_form::Auth_form(QWidget *parent) :
     ui->setupUi(this);
     this->mode = true;
     this->change_mode(mode);
+
+    connect(SingletonClient::getInstance(), &SingletonClient::auth_ok,this,&Auth_form::slot_close);
 }
 
+void Auth_form::slot_close(QString log)
+{
+    close();
+}
 Auth_form::~Auth_form()
 {
     delete ui;
@@ -46,25 +52,22 @@ void Auth_form::on_pushButton_reg_clicked()
     qDebug()<<"reg "+ui->lineEdit_login->text()+
               ui->lineEdit_pass->text()+" "+
               ui->lineEdit_r_pass->text();
-    emit auth_ok(ui->lineEdit_login->text());
-    this->close();
 
+    //emit auth_ok(ui->lineEdit_login->text());
 
+    SingletonClient::getInstance()->send_to_server("reg "+ui->lineEdit_login->text()+
+                                                   ui->lineEdit_pass->text()+" "+
+                                                   ui->lineEdit_r_pass->text());
+    this->on_pushButton_log_clicked();
 }
-
-
-
 
 
 void Auth_form::on_pushButton_log_clicked()
 {
-    qDebug()<<"log "+ui->lineEdit_login->text()+
-              ui->lineEdit_pass->text();
+    qDebug()<<"auth "+ui->lineEdit_login->text()+ " " + ui->lineEdit_pass->text();
 
     SingletonClient::getInstance()->send_to_server("auth "+ui->lineEdit_login->text()+ " " + ui->lineEdit_pass->text());
-    if (SingletonClient::getInstance()->auth_status){
-        emit auth_ok(ui->lineEdit_login->text());
-        this->close();
-    }
+   // this->close();
+
 }
 

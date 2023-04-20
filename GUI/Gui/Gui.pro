@@ -13,16 +13,19 @@ SOURCES += \
     auth_form.cpp \
     main.cpp \
     mainwindow.cpp \
-    client_sing.cpp
+    client_sing.cpp \
+    stat.cpp
 
 HEADERS += \
     auth_form.h \
     mainwindow.h \
-    client_sing.h
+    client_sing.h \
+    stat.h
 
 FORMS += \
     auth_form.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    stat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

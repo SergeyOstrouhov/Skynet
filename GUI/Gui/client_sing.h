@@ -36,9 +36,12 @@ class SingletonClient: public QObject
         ~SingletonClient();
         friend class SingletonClientDestroyer;
     public:
-        bool auth_status = false;
+        QString login;
         bool send_to_server(QString req);
         static SingletonClient* getInstance();
+signals:
+        void auth_ok(QString);
+        void stat(QString);
 
 };
 

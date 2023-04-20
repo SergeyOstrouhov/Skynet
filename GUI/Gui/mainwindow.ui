@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="exit">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>420</y>
+      <x>620</x>
+      <y>470</y>
       <width>93</width>
       <height>29</height>
      </rect>
@@ -27,13 +27,13 @@
      <string>Exit</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>230</y>
-      <width>295</width>
-      <height>31</height>
+      <x>210</x>
+      <y>200</y>
+      <width>406</width>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -59,6 +59,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="Check_s_button">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>290</y>
+      <width>131</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Check statistic</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

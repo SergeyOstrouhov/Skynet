@@ -9,8 +9,15 @@ void SingletonClient::slot_read_from_server(){
         arr.append(socket->readAll());
     }
     qDebug() << arr << "\n";
-    if (arr == "auth OK") this->auth_status = true;
-    //else this->auth_status = ;
+    if (arr == "auth OK")
+    {
+         emit auth_ok(this->login);
+    }
+
+    else
+    {
+         emit stat(arr);
+    }
 }
 
 SingletonClient::SingletonClient(QObject *parent) :QObject (parent){
@@ -29,6 +36,7 @@ SingletonClient::SingletonClient(QObject *parent) :QObject (parent){
 SingletonClient::~SingletonClient() {socket->close();}
 
 bool SingletonClient::send_to_server(QString req){
+    qDebug()<<req;
     socket->write(req.toUtf8());
     return false;
 }

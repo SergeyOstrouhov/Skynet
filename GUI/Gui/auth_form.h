@@ -23,7 +23,7 @@ private slots:
 
     void on_pushButton_reg_clicked();
 
-    //void on_pushButton_2_clicked();
+    void slot_close(QString);
 
     void on_pushButton_log_clicked();
 
@@ -32,8 +32,9 @@ private:
     bool mode;
 
     void change_mode(bool);
-signals:
+/*signals:
     void auth_ok(QString);
+    */
 };
 
 #endif // AUTH_FORM_H

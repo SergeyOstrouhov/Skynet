@@ -30,7 +30,8 @@ class MyDataBase
     protected:
         MyDataBase(){
             db = QSqlDatabase::addDatabase("QSQLITE");
-            db.setDatabaseName("C:\\Qt\\Server_221_331\\Users.db");
+            db.setDatabaseName("..\\Server_221_331\\Users.db");
+            //db.setDatabaseName("Users.db");
             db.open();
             if(!db.isOpen())
                 qDebug()<<db.lastError().text();
@@ -88,6 +89,14 @@ class MyDataBase
             query.prepare("UPDATE User SET socket=NULL WHERE login=:login");
             query.bindValue(":login", login);
             query.exec();
+        }
+        QByteArray stat(QString socket)
+        {
+            QSqlQuery query_obj(db);
+            query_obj.prepare("Select stat from User where socket="+socket);
+            query_obj.exec();
+            QByteArray stata = query_obj.value("stat").toByteArray();
+            return stata;
         }
 
 };

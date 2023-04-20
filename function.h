@@ -26,9 +26,10 @@ QByteArray reg(QString login, QString password, QString email){
     MyDataBase::getInstance()->add(login, password, email);
     return res;
 }
-QByteArray check_stat(){
-    QByteArray res = "1 check";
-    return res;
+QByteArray check_stat(QString socket){
+    //MyDataBase::getInstance()->stat(socket);
+    //QByteArray res = "1 check";
+    return MyDataBase::getInstance()->stat(socket);
 }
 QByteArray check_stat_all(){
     QByteArray res = "1 check";
@@ -66,7 +67,7 @@ QByteArray Parsing(QString a, QString socket){
     }
     if (nameOfFunc=="check")
     {
-        if (data_from_client_list.length() == 0) return check_stat();
+        if (data_from_client_list.length() == 0) return check_stat(socket);
         else return "Wrong input data - Dont't need parametrs for checking statisctic.\n";
     }
     if (nameOfFunc=="out")
