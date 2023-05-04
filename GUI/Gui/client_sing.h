@@ -42,7 +42,7 @@ class SingletonClient: public QObject
 signals:
         void auth_ok(QString);
         void stat(QString);
-
+        void stat_all(QString);
 };
 
 //SingletonClient * SingletonClient::p_instance;

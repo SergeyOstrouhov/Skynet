@@ -13,10 +13,12 @@ void SingletonClient::slot_read_from_server(){
     {
          emit auth_ok(this->login);
     }
+    if (arr.left(5) == "check"){
+        emit stat(arr);
+    }
 
-    else
-    {
-         emit stat(arr);
+    if (arr.left(8) == "stat_all"){
+        emit stat_all(arr);
     }
 }
 

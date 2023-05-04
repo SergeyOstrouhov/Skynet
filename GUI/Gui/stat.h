@@ -23,6 +23,9 @@ signals:
 private slots:
     void on_Back_clicked();
     void update_stat(QString);
+    void on_stat_all(QString);
+    void qwerty();
+    void on_stat_all_clicked();
 };
 
 #endif // STAT_H

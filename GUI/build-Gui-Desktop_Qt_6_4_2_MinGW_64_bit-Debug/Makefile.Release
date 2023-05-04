@@ -408,6 +408,7 @@ release/moc_mainwindow.cpp: ../Gui/mainwindow.h \
 		../Gui/auth_form.h \
 		../../../6.4.2/mingw_64/include/QtWidgets/QWidget \
 		../../../6.4.2/mingw_64/include/QtCore/QDebug \
+		../Gui/stat.h \
 		release/moc_predefs.h \
 		../../../6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Qt/Server_221_331/GUI/build-Gui-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Qt/Server_221_331/GUI/Gui -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtNetwork -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Gui\mainwindow.h -o release\moc_mainwindow.cpp
@@ -1012,6 +1013,7 @@ release/main.o: ../Gui/main.cpp ../Gui/mainwindow.h \
 		../Gui/auth_form.h \
 		../../../6.4.2/mingw_64/include/QtWidgets/QWidget \
 		../../../6.4.2/mingw_64/include/QtCore/QDebug \
+		../Gui/stat.h \
 		../../../6.4.2/mingw_64/include/QtWidgets/QApplication \
 		../../../6.4.2/mingw_64/include/QtWidgets/qapplication.h \
 		../../../6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -1178,6 +1180,7 @@ release/mainwindow.o: ../Gui/mainwindow.cpp ../Gui/mainwindow.h \
 		../Gui/auth_form.h \
 		../../../6.4.2/mingw_64/include/QtWidgets/QWidget \
 		../../../6.4.2/mingw_64/include/QtCore/QDebug \
+		../Gui/stat.h \
 		ui_mainwindow.h \
 		../../../6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../6.4.2/mingw_64/include/QtGui/QAction \
@@ -1225,15 +1228,14 @@ release/mainwindow.o: ../Gui/mainwindow.cpp ../Gui/mainwindow.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qabstractsocket.h \
-		../../../6.4.2/mingw_64/include/QtNetwork/qhostaddress.h \
-		../Gui/stat.h
+		../../../6.4.2/mingw_64/include/QtNetwork/qhostaddress.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Gui\mainwindow.cpp
 
-release/client_sing.o: ../Gui/client_sing.cpp ../Gui/auth_form.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QWidget \
-		../../../6.4.2/mingw_64/include/QtWidgets/qwidget.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtguiglobal.h \
+release/client_sing.o: ../Gui/client_sing.cpp ../Gui/client_sing.h \
+		../../../6.4.2/mingw_64/include/QtCore/QObject \
+		../../../6.4.2/mingw_64/include/QtCore/qobject.h \
+		../../../6.4.2/mingw_64/include/QtCore/qobjectdefs.h \
+		../../../6.4.2/mingw_64/include/QtCore/qnamespace.h \
 		../../../6.4.2/mingw_64/include/QtCore/qglobal.h \
 		../../../6.4.2/mingw_64/include/QtCore/qconfig-bootstrapped.h \
 		../../../6.4.2/mingw_64/include/QtCore/qconfig.h \
@@ -1258,17 +1260,8 @@ release/client_sing.o: ../Gui/client_sing.cpp ../Gui/auth_form.h \
 		../../../6.4.2/mingw_64/include/QtCore/qnumeric.h \
 		../../../6.4.2/mingw_64/include/QtCore/qversiontagging.h \
 		../../../6.4.2/mingw_64/include/QtCore/qforeach.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtgui-config.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtguiexports.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
-		../../../6.4.2/mingw_64/include/QtCore/qobjectdefs.h \
-		../../../6.4.2/mingw_64/include/QtCore/qnamespace.h \
 		../../../6.4.2/mingw_64/include/QtCore/qtmetamacros.h \
 		../../../6.4.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		../../../6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
-		../../../6.4.2/mingw_64/include/QtCore/qobject.h \
 		../../../6.4.2/mingw_64/include/QtCore/qstring.h \
 		../../../6.4.2/mingw_64/include/QtCore/qchar.h \
 		../../../6.4.2/mingw_64/include/QtCore/qstringview.h \
@@ -1309,116 +1302,27 @@ release/client_sing.o: ../Gui/client_sing.cpp ../Gui/auth_form.h \
 		../../../6.4.2/mingw_64/include/QtCore/qmath.h \
 		../../../6.4.2/mingw_64/include/QtCore/qobject_impl.h \
 		../../../6.4.2/mingw_64/include/QtCore/qbindingstorage.h \
-		../../../6.4.2/mingw_64/include/QtCore/qmargins.h \
-		../../../6.4.2/mingw_64/include/QtGui/qaction.h \
-		../../../6.4.2/mingw_64/include/QtGui/qkeysequence.h \
-		../../../6.4.2/mingw_64/include/QtGui/qicon.h \
-		../../../6.4.2/mingw_64/include/QtCore/qsize.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpixmap.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpaintdevice.h \
-		../../../6.4.2/mingw_64/include/QtCore/qrect.h \
-		../../../6.4.2/mingw_64/include/QtCore/qpoint.h \
-		../../../6.4.2/mingw_64/include/QtGui/qcolor.h \
-		../../../6.4.2/mingw_64/include/QtGui/qrgb.h \
-		../../../6.4.2/mingw_64/include/QtGui/qrgba64.h \
-		../../../6.4.2/mingw_64/include/QtCore/qsharedpointer.h \
-		../../../6.4.2/mingw_64/include/QtCore/qshareddata.h \
-		../../../6.4.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		../../../6.4.2/mingw_64/include/QtGui/qimage.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpixelformat.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtransform.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpolygon.h \
-		../../../6.4.2/mingw_64/include/QtGui/qregion.h \
-		../../../6.4.2/mingw_64/include/QtCore/qline.h \
-		../../../6.4.2/mingw_64/include/QtCore/qvariant.h \
-		../../../6.4.2/mingw_64/include/QtCore/qdebug.h \
-		../../../6.4.2/mingw_64/include/QtCore/qtextstream.h \
-		../../../6.4.2/mingw_64/include/QtCore/qstringconverter_base.h \
-		../../../6.4.2/mingw_64/include/QtCore/qcontiguouscache.h \
-		../../../6.4.2/mingw_64/include/QtCore/qmap.h \
-		../../../6.4.2/mingw_64/include/QtCore/qshareddata_impl.h \
-		../../../6.4.2/mingw_64/include/QtCore/qset.h \
-		../../../6.4.2/mingw_64/include/QtCore/qhash.h \
-		../../../6.4.2/mingw_64/include/QtCore/qvarlengtharray.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpalette.h \
-		../../../6.4.2/mingw_64/include/QtGui/qbrush.h \
-		../../../6.4.2/mingw_64/include/QtGui/qfont.h \
-		../../../6.4.2/mingw_64/include/QtGui/qfontmetrics.h \
-		../../../6.4.2/mingw_64/include/QtGui/qfontinfo.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-		../../../6.4.2/mingw_64/include/QtGui/qcursor.h \
-		../../../6.4.2/mingw_64/include/QtGui/qbitmap.h \
-		../../../6.4.2/mingw_64/include/QtGui/qevent.h \
-		../../../6.4.2/mingw_64/include/QtCore/qiodevice.h \
-		../../../6.4.2/mingw_64/include/QtCore/qpointer.h \
-		../../../6.4.2/mingw_64/include/QtCore/qurl.h \
-		../../../6.4.2/mingw_64/include/QtGui/qeventpoint.h \
-		../../../6.4.2/mingw_64/include/QtGui/qvector2d.h \
-		../../../6.4.2/mingw_64/include/QtGui/qvectornd.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpointingdevice.h \
-		../../../6.4.2/mingw_64/include/QtGui/qinputdevice.h \
-		../../../6.4.2/mingw_64/include/QtGui/qscreen.h \
-		../../../6.4.2/mingw_64/include/QtCore/QList \
-		../../../6.4.2/mingw_64/include/QtCore/QObject \
-		../../../6.4.2/mingw_64/include/QtCore/QRect \
-		../../../6.4.2/mingw_64/include/QtCore/QSize \
-		../../../6.4.2/mingw_64/include/QtCore/QSizeF \
-		../../../6.4.2/mingw_64/include/QtGui/QTransform \
-		../../../6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
-		../../../6.4.2/mingw_64/include/QtCore/QDebug \
-		ui_auth_form.h \
-		../../../6.4.2/mingw_64/include/QtCore/QVariant \
-		../../../6.4.2/mingw_64/include/QtWidgets/QApplication \
-		../../../6.4.2/mingw_64/include/QtWidgets/qapplication.h \
-		../../../6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../6.4.2/mingw_64/include/QtCore/qeventloop.h \
-		../../../6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../6.4.2/mingw_64/include/QtCore/qjnitypes.h \
-		../../../6.4.2/mingw_64/include/QtCore/qfuture.h \
-		../../../6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../6.4.2/mingw_64/include/QtCore/qmutex.h \
-		../../../6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../6.4.2/mingw_64/include/QtCore/qresultstore.h \
-		../../../6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../6.4.2/mingw_64/include/QtCore/qthreadpool.h \
-		../../../6.4.2/mingw_64/include/QtCore/qthread.h \
-		../../../6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../6.4.2/mingw_64/include/QtCore/qrunnable.h \
-		../../../6.4.2/mingw_64/include/QtCore/qexception.h \
-		../../../6.4.2/mingw_64/include/QtCore/qpromise.h \
-		../../../6.4.2/mingw_64/include/QtGui/qguiapplication.h \
-		../../../6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		../../../6.4.2/mingw_64/include/QtCore/qlocale.h \
-		../../../6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qlayout.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QLabel \
-		../../../6.4.2/mingw_64/include/QtWidgets/qlabel.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qframe.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpicture.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtextdocument.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QLineEdit \
-		../../../6.4.2/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtextcursor.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtextformat.h \
-		../../../6.4.2/mingw_64/include/QtGui/qpen.h \
-		../../../6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QPushButton \
-		../../../6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
-		../Gui/client_sing.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/QTcpSocket \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtcpsocket.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
 		../../../6.4.2/mingw_64/include/QtNetwork/qabstractsocket.h \
-		../../../6.4.2/mingw_64/include/QtNetwork/qhostaddress.h
+		../../../6.4.2/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../6.4.2/mingw_64/include/QtCore/qshareddata.h \
+		../../../6.4.2/mingw_64/include/QtCore/qiodevice.h \
+		../../../6.4.2/mingw_64/include/QtCore/qdebug.h \
+		../../../6.4.2/mingw_64/include/QtCore/qtextstream.h \
+		../../../6.4.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		../../../6.4.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		../../../6.4.2/mingw_64/include/QtCore/qsharedpointer.h \
+		../../../6.4.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		../../../6.4.2/mingw_64/include/QtCore/qmap.h \
+		../../../6.4.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		../../../6.4.2/mingw_64/include/QtCore/qset.h \
+		../../../6.4.2/mingw_64/include/QtCore/qhash.h \
+		../../../6.4.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../../6.4.2/mingw_64/include/QtCore/qvariant.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\client_sing.o ..\Gui\client_sing.cpp
 
 release/stat.o: ../Gui/stat.cpp ../Gui/stat.h \
@@ -1557,7 +1461,59 @@ release/stat.o: ../Gui/stat.cpp ../Gui/stat.h \
 		../../../6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_stat.h
+		ui_stat.h \
+		../../../6.4.2/mingw_64/include/QtCore/QVariant \
+		../../../6.4.2/mingw_64/include/QtWidgets/QApplication \
+		../../../6.4.2/mingw_64/include/QtWidgets/qapplication.h \
+		../../../6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../6.4.2/mingw_64/include/QtCore/qeventloop.h \
+		../../../6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../6.4.2/mingw_64/include/QtCore/qjnitypes.h \
+		../../../6.4.2/mingw_64/include/QtCore/qfuture.h \
+		../../../6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../6.4.2/mingw_64/include/QtCore/qmutex.h \
+		../../../6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../6.4.2/mingw_64/include/QtCore/qresultstore.h \
+		../../../6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../6.4.2/mingw_64/include/QtCore/qthreadpool.h \
+		../../../6.4.2/mingw_64/include/QtCore/qthread.h \
+		../../../6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../6.4.2/mingw_64/include/QtCore/qrunnable.h \
+		../../../6.4.2/mingw_64/include/QtCore/qexception.h \
+		../../../6.4.2/mingw_64/include/QtCore/qpromise.h \
+		../../../6.4.2/mingw_64/include/QtGui/qguiapplication.h \
+		../../../6.4.2/mingw_64/include/QtGui/qinputmethod.h \
+		../../../6.4.2/mingw_64/include/QtCore/qlocale.h \
+		../../../6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/qlayout.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/QLabel \
+		../../../6.4.2/mingw_64/include/QtWidgets/qlabel.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/qframe.h \
+		../../../6.4.2/mingw_64/include/QtGui/qpicture.h \
+		../../../6.4.2/mingw_64/include/QtGui/qtextdocument.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/QLineEdit \
+		../../../6.4.2/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../6.4.2/mingw_64/include/QtGui/qtextcursor.h \
+		../../../6.4.2/mingw_64/include/QtGui/qtextformat.h \
+		../../../6.4.2/mingw_64/include/QtGui/qpen.h \
+		../../../6.4.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Gui/client_sing.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/QTcpSocket \
+		../../../6.4.2/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../6.4.2/mingw_64/include/QtNetwork/qhostaddress.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\stat.o ..\Gui\stat.cpp
 
 release/moc_auth_form.o: release/moc_auth_form.cpp 

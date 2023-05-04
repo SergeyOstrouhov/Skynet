@@ -4,7 +4,7 @@
 //#include <filesystem>
 //#include <iostream>
 
-//#include "Db_sing.h"
+#include "Db_sing.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,5 +14,6 @@ int main(int argc, char *argv[])
 //    std::cout << std::filesystem::current_path() << "\n";
 //    qDebug()<< MyDataBase::getInstance()->query("SELECT * FROM User");
 //    qDebug()<< MyDataBase::getInstance()->query("SELECT name FROM sqlite_master WHERE type='table';");
+//    qDebug()<<MyDataBase::getInstance()->stat_all();
     return a.exec();
 }

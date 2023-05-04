@@ -92,15 +92,44 @@ class MyDataBase
         }
         QByteArray stat(QString socket)
         {
-            QSqlQuery query_obj(db);
-            query_obj.prepare("Select stat from User where socket="+socket);
-            query_obj.exec();
-            QByteArray stata = query_obj.value("stat").toByteArray();
-            return stata;
+            QSqlQuery query(db);
+            query.prepare("SELECT task1, task2 FROM User WHERE socket=:socket;");
+            query.bindValue(":socket", socket);
+            query.exec();
+            QString task1;
+            QString task2;
+            while (query.next()){
+                task1 = query.value("task1").toString();
+                task2 = query.value("task2").toString();
+                qDebug() << "@" << task1 << " & " << task2 << "$\n";
+            }
+//            QByteArray stata = query.value("stat").toByteArray();
+//            qDebug() << query.executedQuery() << "###";
+            QByteArray stat = QByteArray::fromStdString((task1+" "+task2).toStdString());
+            qDebug()<<stat;
+            return "check "+stat;
+        }
+        QByteArray stat_all()
+        {
+            QSqlQuery query(db);
+            query.prepare("SELECT * FROM User;");
+            query.exec();
+            QString res="";
+            QString task2;
+            int ind_1 = query.record().indexOf("task1");
+            int ind_2 = query.record().indexOf("task2");
+            while (query.next()){
+                res+= query.value(ind_1).toString()+" "+query.value(ind_2).toString()+" ";
+            }
+            //res = "eewwe";
+//            QByteArray stata = query.value("stat").toByteArray();
+//            qDebug() << query.executedQuery() << "###";
+            //QByteArray stat = QByteArray::fromStdString((task1+" "+task2).toStdString());
+            //return stat;
+            return "stat_all "+res.toUtf8();
         }
 
 };
 
-MyDataBase * MyDataBase::p_instance;
-SingletonDestroyer MyDataBase::destroyer;
+
 //MyDataBase * SingletonDestroyer::p_instance;

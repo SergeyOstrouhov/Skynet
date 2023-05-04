@@ -29,11 +29,16 @@ QByteArray reg(QString login, QString password, QString email){
 QByteArray check_stat(QString socket){
     //MyDataBase::getInstance()->stat(socket);
     //QByteArray res = "1 check";
+    QString p = MyDataBase::getInstance()->stat(socket);
+    qDebug()<< p+"<check_stat";
     return MyDataBase::getInstance()->stat(socket);
 }
 QByteArray check_stat_all(){
-    QByteArray res = "1 check";
-    return res;
+    //QByteArray res = "1 check";
+    QString p = MyDataBase::getInstance()->stat_all();
+    qDebug()<< p;
+    return MyDataBase::getInstance()->stat_all();
+
 }
 QByteArray out(QString login){
     QByteArray res = "1 log out";
@@ -44,7 +49,6 @@ QByteArray send_answ(QString task, QString var, QString answer){
     QByteArray res = "1 send answer";
     return res;
 }
-
 QByteArray Parsing(QString a, QString socket){
     /*if (a.startsWith("Hello")){
         return "Hi, Sergey!";
@@ -79,6 +83,11 @@ QByteArray Parsing(QString a, QString socket){
     {
         if (data_from_client_list.length() == 1) return send_answ(data_from_client_list.at(0), data_from_client_list.at(1), data_from_client_list.at(2));
         else return "Wrong input data - Need 1 parametrs for send answer.\n";
+    }
+    if (nameOfFunc=="check_stat_all")
+    {
+        if (data_from_client_list.length() == 0) return check_stat_all();
+        //else return "Wrong input data - Dont't need parametrs for checking statisctic.\n";
     }
     else return "wrong syn\n";
 }
