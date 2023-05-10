@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "auth_form.h"
 #include "stat.h"
+#include "task.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

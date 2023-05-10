@@ -1,0 +1,11 @@
+debug/auth_form.o
+debug/main.o
+debug/mainwindow.o
+debug/client_sing.o
+debug/stat.o
+debug/task.o
+debug/moc_auth_form.o
+debug/moc_mainwindow.o
+debug/moc_client_sing.o
+debug/moc_stat.o
+debug/moc_task.o

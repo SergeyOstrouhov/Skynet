@@ -1,0 +1,11 @@
+release/auth_form.o
+release/main.o
+release/mainwindow.o
+release/client_sing.o
+release/stat.o
+release/task.o
+release/moc_auth_form.o
+release/moc_mainwindow.o
+release/moc_client_sing.o
+release/moc_stat.o
+release/moc_task.o
