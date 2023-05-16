@@ -33,7 +33,7 @@ private slots:
 
     void on_actionExit_triggered();
 
-    void on_Tak2_clicked();
+    void on_Task2_clicked();
 
     void on_push_Task3_clicked();
 

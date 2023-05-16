@@ -30,8 +30,7 @@ class MyDataBase
     protected:
         MyDataBase(){
             db = QSqlDatabase::addDatabase("QSQLITE");
-            db.setDatabaseName("..\\Server_221_331\\Users.db");
-            //db.setDatabaseName("Users.db");
+            db.setDatabaseName("D:\\Progs\\Skynet\\Users.db");
             db.open();
             if(!db.isOpen())
                 qDebug()<<db.lastError().text();

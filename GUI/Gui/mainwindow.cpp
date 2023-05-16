@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "client_sing.h"
 #include "stat.h"
-
+#include "stat.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,7 +24,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_exit_clicked()
 {
 
-    this->close();
 }
 
 
@@ -45,7 +44,7 @@ void MainWindow::on_actionTask_1_triggered()
 
 void MainWindow::on_actionTask_2_triggered()
 {
-    this->on_Tak2_clicked();
+    this->on_Task2_clicked();
 }
 
 
@@ -61,7 +60,7 @@ void MainWindow::on_actionExit_triggered()
 }
 
 
-void MainWindow::on_Tak2_clicked()
+void MainWindow::on_Task2_clicked()
 {
     qDebug()<<"task 2";
 }
