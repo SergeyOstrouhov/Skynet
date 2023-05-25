@@ -45,8 +45,9 @@ QByteArray out(QString login){
     MyDataBase::getInstance()->logout(login);
     return res;
 }
-QByteArray send_answ(QString task, QString var, QString answer){
+QByteArray send_answ(QString task, QString cor, QString socket){
     QByteArray res = "1 send answer";
+    MyDataBase::getInstance()->correct1(task, cor, socket);
     return res;
 }
 QByteArray Parsing(QString a, QString socket){
@@ -81,8 +82,8 @@ QByteArray Parsing(QString a, QString socket){
     }
     if (nameOfFunc=="send_answ")
     {
-        if (data_from_client_list.length() == 1) return send_answ(data_from_client_list.at(0), data_from_client_list.at(1), data_from_client_list.at(2));
-        else return "Wrong input data - Need 1 parametrs for send answer.\n";
+        if (data_from_client_list.length() == 2) return send_answ(data_from_client_list.at(0), data_from_client_list.at(1), socket);
+        else return "Wrong input data - Need 2 parametrs for send answer.\n";
     }
     if (nameOfFunc=="check_stat_all")
     {

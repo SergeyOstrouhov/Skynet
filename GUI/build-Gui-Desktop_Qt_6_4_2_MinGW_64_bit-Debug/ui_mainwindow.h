@@ -34,8 +34,8 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *Task1;
-    QPushButton *Tak2;
-    QPushButton *push_Task3;
+    QPushButton *Task2;
+    QPushButton *Task3;
     QPushButton *Check_s_button;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -71,15 +71,15 @@ public:
 
         horizontalLayout->addWidget(Task1);
 
-        Tak2 = new QPushButton(layoutWidget);
-        Tak2->setObjectName("Tak2");
+        Task2 = new QPushButton(layoutWidget);
+        Task2->setObjectName("Task2");
 
-        horizontalLayout->addWidget(Tak2);
+        horizontalLayout->addWidget(Task2);
 
-        push_Task3 = new QPushButton(layoutWidget);
-        push_Task3->setObjectName("push_Task3");
+        Task3 = new QPushButton(layoutWidget);
+        Task3->setObjectName("Task3");
 
-        horizontalLayout->addWidget(push_Task3);
+        horizontalLayout->addWidget(Task3);
 
         Check_s_button = new QPushButton(centralwidget);
         Check_s_button->setObjectName("Check_s_button");
@@ -119,8 +119,8 @@ public:
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         exit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         Task1->setText(QCoreApplication::translate("MainWindow", "Task 1", nullptr));
-        Tak2->setText(QCoreApplication::translate("MainWindow", "Task 2", nullptr));
-        push_Task3->setText(QCoreApplication::translate("MainWindow", "Task 3", nullptr));
+        Task2->setText(QCoreApplication::translate("MainWindow", "Task 2", nullptr));
+        Task3->setText(QCoreApplication::translate("MainWindow", "Task 3", nullptr));
         Check_s_button->setText(QCoreApplication::translate("MainWindow", "Check statistic", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));

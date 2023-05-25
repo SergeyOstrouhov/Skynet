@@ -45,14 +45,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="Tak2">
+      <widget class="QPushButton" name="Task2">
        <property name="text">
         <string>Task 2</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="push_Task3">
+      <widget class="QPushButton" name="Task3">
        <property name="text">
         <string>Task 3</string>
        </property>

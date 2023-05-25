@@ -23,14 +23,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_exit_clicked()
 {
-
+ this->close();
 }
 
 
-void MainWindow::on_Task1_clicked()
-{
-    qDebug()<<"task 1";
-}
+
 void MainWindow::slot_on_auth_ok(QString log){
 //    ui->label_log->setText(log);
     this->show();
@@ -50,7 +47,7 @@ void MainWindow::on_actionTask_2_triggered()
 
 void MainWindow::on_actionTask_3_triggered()
 {
-    this->on_push_Task3_clicked();
+    this->on_Task3_clicked();
 }
 
 
@@ -59,16 +56,26 @@ void MainWindow::on_actionExit_triggered()
     this->on_exit_clicked();
 }
 
+void MainWindow::on_Task1_clicked()
+{
+    qDebug()<<"task 1";
+    task = new Task();
+    task->show();
+}
 
 void MainWindow::on_Task2_clicked()
 {
     qDebug()<<"task 2";
+    task = new Task();
+    task->show();
 }
 
 
-void MainWindow::on_push_Task3_clicked()
+void MainWindow::on_Task3_clicked()
 {
     qDebug()<<"task 3";
+    task = new Task();
+    task->show();
 }
 
 
@@ -81,4 +88,5 @@ void MainWindow::on_Check_s_button_clicked()
     connect(stat, &Stat::on_closed,
             this, &MainWindow::show);
 }
+
 

@@ -23,7 +23,7 @@ private slots:
 
  //   void on_pushButton_clicked();
 
-    void on_Task1_clicked();
+
 
     void on_actionTask_1_triggered();
 
@@ -33,9 +33,11 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void on_Task1_clicked();
+
     void on_Task2_clicked();
 
-    void on_push_Task3_clicked();
+    void on_Task3_clicked();
 
     void slot_on_auth_ok(QString log);
 
@@ -45,5 +47,6 @@ private:
     Ui::MainWindow *ui;
     Auth_form* ui_auth;
     Stat * stat;
+    Task * task;
 };
 #endif // MAINWINDOW_H

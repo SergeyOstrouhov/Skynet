@@ -14,9 +14,14 @@ class Task : public QWidget
 public:
     explicit Task(QWidget *parent = nullptr);
     ~Task();
-
+signals:
+    void on_closed();
 private:
     Ui::Task *ui;
+    int a;
+    int b;
+private slots:
+    void on_Ok_clicked();
 };
 
 #endif // TASK_H
