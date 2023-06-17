@@ -44,7 +44,7 @@ class MyDataBase
          */
         MyDataBase(){
             db = QSqlDatabase::addDatabase("QSQLITE");
-            db.setDatabaseName("C:\\Qt\\Server_221_331\\Skynet\\Users.db");
+            db.setDatabaseName("D:\\Progs\\Skynet\\Users.db");
             //db.setDatabaseName("Users.db");
             db.open();
             if(!db.isOpen())
